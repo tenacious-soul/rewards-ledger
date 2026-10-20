@@ -1,7 +1,0 @@
-# Use this workspace to collaborate
-workspace:
-  id: a829449e-6d06-4c2f-803c-17934c6f2a50
-
-localResources:
-  collections:
-    - ../rewards-ledger.postman_collection.json

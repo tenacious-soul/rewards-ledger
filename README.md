@@ -13,9 +13,9 @@ A small Spring Boot service for a rewards points program. Members earn points (p
 ```bash
 docker compose up --build
 ```
+or simply `./run.sh`.
 
-Data is kept in memory, so restarting the container starts from an empty database.
-
+The API starts on `http://localhost:8080`. Data is kept in memory, so restarting the container starts from an empty database.
 ### Postman
 
 The `postman/Rewards Ledger` folder is a Postman collection in the v3 YAML format. Open it from Postman's Local Mode by selecting that folder. It has every endpoint, the example from the brief and the error cases. Run the requests from top to bottom, or run the whole collection with the Collection Runner. Creating the member saves its id, and later requests reuse it.
