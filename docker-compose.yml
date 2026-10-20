@@ -1,0 +1,6 @@
+services:
+  rewards-ledger:
+    build: .
+    image: rewards-ledger:latest
+    ports:
+      - "8080:8080"

@@ -1,0 +1,6 @@
+$kind: collection
+name: Rewards Ledger
+description: Rewards Points Ledger API. Start the service with `docker compose up --build`, then run the requests from top to bottom.
+variables:
+  baseUrl: http://localhost:8080
+  memberId: "1"

@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{baseUrl}}/rewards"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "member_id": {{memberId}},
+      "point_type_id": 4,
+      "points": 300,
+      "description": "Redeemed for voucher",
+      "event_date": "2024-02-15T16:30:45Z"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('201 Created', () => pm.response.to.have.status(201));
+      pm.test('Stored as negative points', () => pm.expect(pm.response.json().points).to.eql(-300));
+    language: text/javascript
+order: 4000

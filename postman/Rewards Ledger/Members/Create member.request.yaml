@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{baseUrl}}/members"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Alice Johnson",
+      "email": "alice@example.com"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('201 Created', () => pm.response.to.have.status(201));
+      if (pm.response.code === 201) {
+          pm.collectionVariables.set('memberId', pm.response.json().member_id);
+      }
+    language: text/javascript
+order: 1000
